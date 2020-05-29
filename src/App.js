@@ -1,26 +1,15 @@
 import React, { Component } from 'react';
-import Layout from './components/Layout/Layout';
-import BurgerBuilder from "./components/BurgerBuilder/BurgerBuilder";
-import Backdrop from './components/UI/Backdrop/Backdrop';
+
+import Layout from './hoc/Layout/Layout';
+import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
 
 class App extends Component {
-    state = {
-        purchasing: false
-    }
-
-    purchaseHandler = () => {
-        this.setState({purchasing: true})
-    }
-
-  render() {
-
+  render () {
     return (
-      <div className="App">
-
-          <Layout>
-            <BurgerBuilder></BurgerBuilder>
+      <div>
+        <Layout>
+          <BurgerBuilder />
         </Layout>
-
       </div>
     );
   }
