@@ -21,7 +21,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                aws s3 cp --recursive build s3://react-burger-app-dev
+                sh 'aws s3 cp --recursive build s3://react-burger-app-dev'
             }
         }
     }
