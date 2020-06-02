@@ -7,6 +7,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                echo "install dependencies"
+                npm install
+                echo 'create build'
+                npm run build
             }
         }
         stage('Test') {
@@ -17,6 +21,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                aws s3 cp --recursive build s3://react-burger-app-dev
             }
         }
     }
