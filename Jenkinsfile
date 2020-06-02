@@ -8,9 +8,9 @@ pipeline {
             steps {
                 echo 'Building..'
                 echo "install dependencies"
-                npm install
+                sh 'npm install'
                 echo 'create build'
-                npm run build
+                sh 'npm run build'
             }
         }
         stage('Test') {
